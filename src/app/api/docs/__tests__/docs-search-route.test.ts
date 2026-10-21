@@ -1,16 +1,3 @@
-/**
- * docs-search-route.test.ts
- *
- * Route-level tests for GET /api/docs/search
- *
- * Tests cover:
- *  - Empty query returns empty results (searchDocs returns [] for empty terms)
- *  - Searching returns ranked results
- *  - Response shape (results array + query echo)
- *  - Search against static pages
- *  - Missing q param treated as empty string
- */
-
 import { describe, it, expect, vi, beforeEach } from "vitest"
 import { NextRequest } from "next/server"
 
