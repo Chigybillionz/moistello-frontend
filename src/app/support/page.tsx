@@ -3,14 +3,10 @@ import { buildRouteMetadata } from "@/lib/seo/route-metadata"
 import dynamic from "next/dynamic"
 import { PublicLayout } from "@/components/layout/public-layout"
 import { SearchForm } from "./search-form"
-
-const TicketForm = dynamic(
-  () => import("./ticket-form").then((m) => m.TicketForm),
-  { ssr: false }
-)
+import { TicketFormTrigger } from "./ticket-form-trigger"
 
 const TicketLookup = dynamic(
-  () => import("./ticket-lookup").then((m) => m.TicketLookup),
+  () => import("./ticket-lookup").then((module) => module.TicketLookup),
   { ssr: false }
 )
 
@@ -114,7 +110,7 @@ export default function SupportPage() {
                   </p>
                 </div>
               </div>
-              <TicketForm />
+              <TicketFormTrigger />
             </div>
 
             {/* Track ticket */}
@@ -147,7 +143,7 @@ export default function SupportPage() {
                   Submit a Ticket
                 </h2>
               </div>
-              <TicketForm />
+              <TicketFormTrigger />
             </div>
 
             <div className="rounded-2xl bg-card/60 backdrop-blur-xl border border-white/10 p-5">
