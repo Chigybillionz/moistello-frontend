@@ -408,7 +408,7 @@ export function createWalletConnectAdapter(): WalletAdapter & {
     async signTransaction(xdr: string) {
       if (!currentPublicKey || !currentSession) {
         throw {
-          code: "not_connected",
+          code: "not_installed",
           message: "Not connected to WalletConnect",
           adapter: "walletconnect",
         }
