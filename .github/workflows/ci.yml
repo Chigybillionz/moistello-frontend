@@ -33,7 +33,7 @@ jobs:
             nextjs-${{ runner.os }}-
       - run: npm ci
       - run: npm run lint
-      - run: npx tsc --noEmit
+      - run: npm run typecheck
       # ── SEO route audit ────────────────────────────────────────────────────
       # Proves every public route in src/app ships a unique meta description
       # and OpenGraph/Twitter tags, and that the sitemap only advertises
